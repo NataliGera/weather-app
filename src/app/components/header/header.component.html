@@ -1,0 +1,31 @@
+<header>
+  <div class="header">
+    <div>MY WEATHER</div>
+    <div class="search">
+       <input type="text" [(ngModel)]="cityName">
+       <button id="btn" (click)="getCityName()"
+                        (click)="setDataCurrentWeather()"
+                        (click)="setDataForecast()">
+         <img src="/assets/images/icon-search.png" alt="search" id="search">
+       </button>
+    </div>
+  </div>
+  <div class="menu">
+    <ul>
+       <li routerLink="/current-weather"
+           routerLinkActive="active"
+           (click)=" showError()">
+          Today
+       </li>
+
+       <li routerLink="/five-day-forecast"
+           routerLinkActive="active"
+           (click)=" showError()">
+          5-day forecast
+       </li>
+    </ul>
+  </div>
+</header>
+
+
+

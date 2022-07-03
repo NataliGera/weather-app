@@ -1,0 +1,30 @@
+<app-header (changeDataCurrentWeather)="getCurrentWeatherData()"></app-header>
+<div class="currentWeather-wrapper" *ngIf="currentWeather != null">
+  <div class="currentWeather-container">
+     <div>CURRENT WEATHER</div>
+     <div>{{today | date:'dd.MM.yyyy'}}</div>
+  </div>
+  <div class="weather-wrapper">
+     <div class="weather-container">
+      <div><img [src]="ICON_URL" alt="weather-icon"></div>
+      <div>{{currentWeather.weather[0].main}}</div>
+     </div>
+     <div class="temperature-container">
+      <div class="temp">{{currentWeather.main.temp | number:'.0-0'}}&#176;C</div>
+      <div class="feels-like">Real feel {{currentWeather.main.feels_like | number:'.0-0'}}&#176;C</div>
+     </div>
+     <div class="daylightHours-container">
+       <div>
+        <p>Sunrise: </p>
+        <p>Sunset: </p>
+        <p>Duration: </p>
+       </div>
+       <div>
+        <p>{{sunrise | date:'shortTime'}}</p>
+        <p>{{sunset | date:'shortTime'}}</p>
+        <p>{{duration | date:'HH.mm'}} hr</p>
+       </div>
+    </div>
+  </div>
+</div>
+

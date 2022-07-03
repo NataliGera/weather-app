@@ -1,0 +1,25 @@
+<div class="hourly-wrapper">
+  <div class="hourly-header">HOURLY</div>
+  <div class="hourly-container">
+    <div class="hourly-title">
+      <div id="hourly-weekday">{{weekday | date:'EEEE' | uppercase}}</div>
+      <div class="empty"></div>
+      <div class="">Forecast</div>
+      <div class="">Temp (&#176;C)</div>
+      <div class="">RealFeel</div>
+      <div class="">Wind(km/h)</div>
+    </div>
+    <div class="hour-container">
+      <div class="hour-container__item" *ngFor="let elem of hourly">
+        <div class="">{{elem.dt | date:'HH'}}<sup>00</sup></div>
+        <div class="image"><img src="http://openweathermap.org/img/wn/{{elem.weather[0].icon}}@2x.png" alt="weather-icon"></div>
+        <div class="">{{elem.weather[0].main}}</div>
+        <div class="">{{elem.main.temp | number:'.0-0'}}</div>
+        <div class="">{{elem.main.feels_like | number:'.0-0'}}</div>
+        <div class="">{{elem.wind.speed | number:'.0-0'}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

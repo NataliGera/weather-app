@@ -1,0 +1,61 @@
+/* HOURLY */
+
+.hourly-wrapper {
+	width: fit-content;
+	max-width: 95%;
+	margin: 20px auto;
+	background-color: aliceblue;
+}
+.hourly-header {
+	color: #009595;
+	font-size: 1.25rem;
+	font-weight: bold;
+	padding: 20px 1.5rem 10px 2.5rem;
+}
+.hourly-container {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0 auto;
+	padding: 10px 1.5rem 20px 4rem;
+	font-size: 1.375rem;
+	color: #8893a2;
+}
+.hourly-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 50px;
+	font-size: 1.375rem;
+	color: #8893a2;
+}
+.hour-container {
+	display: flex;
+	justify-content: space-between;
+}
+.hour-container__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 10px;
+	color: #404144;
+}
+.hour-container__item img {
+	width: 100px;
+	height: 100px;
+}
+#hourly-weekday {
+	height: 50.53px;
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: #404144;
+}
+.empty {
+	height: 125.6px;
+}
+.hourly-title div,
+.hour-container__item div {
+	padding: 10px 0;
+}
+.hour-container__item div.image {
+	padding: 0;
+}

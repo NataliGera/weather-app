@@ -1,0 +1,17 @@
+<app-header (changeDataForecast)="getForecastData()"></app-header>
+<div class="forecast-container" *ngIf="forecast != null">
+  <div class="forecast-container__item" *ngFor="let day of fiveDays"
+                                        (click)="getListOfHoursOfOneDay(listWithinTimezone, getDateinSelectedBlock(day.dt))"
+                                        [class]= "active === fiveDays[0] && active === day ? 'active' : ''"
+                                        (click)="active = day"
+                                        (click)="weekday = day.dt">
+    <div class="weekday">{{day.dt | date:'E' | uppercase}}</div>
+    <div class="date">{{day.dt | date:'MMM dd' | uppercase}}</div>
+    <div><img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="weather-icon"></div>
+    <div class="temp">{{day.main.temp | number:'.0-0'}}&#176;C</div>
+    <div class="discription">{{day.weather[0].main}}</div>
+  </div>
+</div>
+<app-hourly [hourly]="hourly"
+            [weekday]="weekday" *ngIf="forecast != null"></app-hourly>
+
