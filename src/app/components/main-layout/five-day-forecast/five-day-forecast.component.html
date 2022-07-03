@@ -2,7 +2,7 @@
 <div class="forecast-container" *ngIf="forecast != null">
   <div class="forecast-container__item" *ngFor="let day of fiveDays"
                                         (click)="getListOfHoursOfOneDay(listWithinTimezone, getDateinSelectedBlock(day.dt))"
-                                        [class]= "active === fiveDays[0] && active === day ? 'active' : ''"
+                                        [class]= "active === day ? 'active' : ''"
                                         (click)="active = day"
                                         (click)="weekday = day.dt">
     <div class="weekday">{{day.dt | date:'E' | uppercase}}</div>
