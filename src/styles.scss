@@ -1,6 +1,9 @@
 *{
   box-sizing: border-box;
 }
+html {
+  margin-right: calc(-1 * (100vw - 100%));
+}
 body{
   width: 100%;
  max-width: 1200px;
