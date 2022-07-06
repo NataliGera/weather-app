@@ -22,11 +22,9 @@ export class ErrorComponent implements OnInit {
   }
 
   public handleError(error: any) {
-    console.error(error);
     if (error.status === 404) {
       this.weatherService.isError = true;
       this.zone.run(() => {this.router.navigate(['**'])});
-      console.log(this.weatherService.city);
     }
   }
 
@@ -37,9 +35,7 @@ export class ErrorComponent implements OnInit {
   getCurrentWeatherData(): void {
   	this.weatherService.getCurrentWeather().subscribe((currentWeather: ICurrentWeather) => {
 	    this.currentWeather = currentWeather;
-	    console.log(currentWeather);
       this.weatherService.isError = false;
-      console.log(this.weatherService.isError);
       this.zone.run(() => {this.router.navigate(['/'])});
     })
   }
