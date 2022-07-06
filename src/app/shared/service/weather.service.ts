@@ -13,7 +13,7 @@ const API_KEY = '6bc1ddf39c566f61b3ff659046e2901b';
 })
 export class WeatherService  {
 
-  city = 'Minsk';
+  city: string = 'Minsk';
   currentTimezone: number = 10800;
   isError: boolean = false;
 
